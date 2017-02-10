@@ -1,0 +1,115 @@
+<html>
+  <head>
+
+    <style type="text/css" media="screen">
+    .editor { 
+      width: 32%;
+      height: 400px;
+      float:left;
+    }
+    #_a,
+    #_g,
+    #_k{ 
+      width: 100%;
+      height: 400px;
+      border: 1px #000 solid;
+    }
+    
+
+    </style>  
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="rison.js"></script>
+    <script src="app.js"></script>
+  </head>
+  
+  <body>
+    <div class="editor">
+      <span>_a</span>
+      <div id="_a">{
+ "ss": 12
+}
+      </div>
+    </div>
+    <div class="editor">
+      <span>_g</span>
+      <div id="_g">{
+  "refreshInterval" : {
+    "display": "Off",
+    "pause": true,
+    "value":0
+  },
+  "time": {
+     "from": "2016-03-20T01:23:12.000Z",
+     "mode": "absolute" ,
+     "to": "2016-07-15T18:41:12.000Z"
+  }
+}
+      </div>
+    </div>
+    <div class="editor">
+      <span>_k</span>
+      <div id="_k">{
+  "u": "transaction/transaction/AVokEZzPvYUDC1MCnThL/transactionId",
+  "d": {
+      "Single-Transaction": {
+          "f": [
+                 {
+                  "$state": {
+                   "store": "appState"
+                  },
+                  "meta": {
+                   "alias": "Related%20to%20transaction:10436889138",
+                   "apply": true,
+                   "dependsOnSelectedEntities": false,
+                   "dependsOnSelectedEntitiesDisabled": false,
+                   "disabled": false,
+                   "index": "transactionsamecard",
+                   "key": "query",
+                   "markDependOnSelectedEntities": false,
+                   "negate": false,
+                   "value": "(cardCorrelationId:%22ijOnQlKxlDhHZVM9byrgb%2FzFrgw%3D%22%20OR%20(%20NOT%20indexFor:transactionsamecard))%20AND%20%20(customerId:1141186%20OR%20(%20NOT%20indexFor:transactionsamecustomer))%20%20AND%20%20(customerIpAddress:%22173.32.197.5%22%20OR%20(%20NOT%20indexFor:transactionsameip))"
+                  },
+                  "query": {
+                   "query_string": {
+                    "analyze_wildcard": true,
+                    "query": "(cardCorrelationId:%22ijOnQlKxlDhHZVM9byrgb%2FzFrgw%3D%22%20OR%20(%20NOT%20indexFor:transactionsamecard))\n%20AND%20%20(customerId:1141186%20OR%20(%20NOT%20indexFor:transactionsamecustomer))%20%20AND%20%20\n(customerIpAddress:%22173.32.197.5%22%20OR%20(%20NOT%20indexFor:transactionsameip))"
+                   }
+                  }
+                 }
+                ],
+           "t": {
+              "f": "now-5y",
+              "m": "quick",
+              "t": "now"
+          }
+      }
+      
+  }
+}</div>
+    </div>
+
+    <div style="clear: both"/>
+    <br/>
+
+    <button id="toURL">To url</button>
+    <br/>
+
+
+    URL: <br/>
+    <textarea style="width:100%; height: 100px;" id="url"></textarea>
+    <button id="toObjects">To objects</button>
+    <br/>
+
+    ERROR: <br/>
+    <textarea style="width:100%" id="error"></textarea>
+    
+ 
+  </body>
+
+
+
+</html>
