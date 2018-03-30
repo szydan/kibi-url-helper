@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+  $('#url').focus();
+  
   function findPart(name, parts) {
     for (var i=0; i < parts.length; i++ ) {
       var part = parts[i];
