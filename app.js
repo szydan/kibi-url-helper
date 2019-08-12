@@ -48,15 +48,18 @@ $( document ).ready(function() {
     return editor;
   }
 
+  var hostAndPath = '';
   var _a = createEditor('_a');
   var _g = createEditor('_g');
   var _k = createEditor('_k');
 
   $('#toObjects').click(function () {
     var url = $('#url').val();
+    url = decodeURIComponent(url);
     // grab parts 
     var index = url.indexOf('?');
     var search = url.substring(index+1);
+    hostAndPath = url.substring(0, index);
     var parts = search.split('&');
 
     var kibiState = findPart('_k', parts);  
@@ -101,7 +104,7 @@ $( document ).ready(function() {
     if(kibiState) {
       urlParts.push('_k=' + kibiState);
     }
-    $("#url").val('?' + urlParts.join('&'))
+    $("#url").val(hostAndPath + '?' + urlParts.join('&'))
 
 
   });
